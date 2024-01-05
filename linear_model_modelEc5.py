@@ -31,6 +31,9 @@ new_values = np.linspace(-5.0, 5.0, 26)
 predictions = linear_model.predict(new_values)
 print(predictions.tolist())
 
+export_path = 'modelEc5/'
+tf.saved_model.save(linear_model, os.path.join('./',export_path))
+
 W = linear_model.layers[0].get_weights()[0]
 b = linear_model.layers[0].get_weights()[1]
 
